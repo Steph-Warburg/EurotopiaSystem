@@ -2,18 +2,18 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Eurotopia Testing")]
+[assembly: AssemblyTitle("Eurotpia Testing New")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Eurotopia Testing")]
+[assembly: AssemblyProduct("Eurotpia Testing New")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 [assembly: ComVisible(false)]
 
-[assembly: Guid("4d4c1c52-8999-4dd9-a1aa-86f3a6789b3c")]
+[assembly: Guid("50200666-2cee-45f8-81a6-24a442a9dfe2")]
 
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]

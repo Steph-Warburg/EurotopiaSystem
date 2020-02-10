@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eurotopia Testing", "Eurotopia Testing\Eurotopia Testing.csproj", "{4D4C1C52-8999-4DD9-A1AA-86F3A6789B3C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EurotopiaBackOffice", "EurotopiaBackOffice\EurotopiaBackOffice.csproj", "{4C25FEB8-4225-45CB-B25F-D073FE0507ED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EurotopiaClasses", "EurotopiaClasses\EurotopiaClasses.csproj", "{72E030B9-FFA7-4948-A6AB-F1243A9F4ECD}"
@@ -27,7 +25,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EurotopiaFrontOffice", "Eur
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "4132"
+		SlnRelativePath = "EurotopiaFrontOffice\"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eurotpia Testing New", "Eurotpia Testing New\Eurotpia Testing New.csproj", "{50200666-2CEE-45F8-81A6-24A442A9DFE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +36,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4D4C1C52-8999-4DD9-A1AA-86F3A6789B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D4C1C52-8999-4DD9-A1AA-86F3A6789B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D4C1C52-8999-4DD9-A1AA-86F3A6789B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D4C1C52-8999-4DD9-A1AA-86F3A6789B3C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4C25FEB8-4225-45CB-B25F-D073FE0507ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4C25FEB8-4225-45CB-B25F-D073FE0507ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C25FEB8-4225-45CB-B25F-D073FE0507ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +48,10 @@ Global
 		{CD8947F0-71D7-4312-AB9B-4F6582A7C403}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD8947F0-71D7-4312-AB9B-4F6582A7C403}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{CD8947F0-71D7-4312-AB9B-4F6582A7C403}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{50200666-2CEE-45F8-81A6-24A442A9DFE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50200666-2CEE-45F8-81A6-24A442A9DFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50200666-2CEE-45F8-81A6-24A442A9DFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50200666-2CEE-45F8-81A6-24A442A9DFE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
