@@ -1,11 +1,10 @@
 ﻿using System;
-using Eurotpia_Testing_New;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Eurotopia_Testing
 {
     [TestClass]
-    public class UnitTest1
+    public class tstVendors
     {
         [TestMethod]
         public void InstanceOK()
@@ -13,11 +12,11 @@ namespace Eurotopia_Testing
 
             //Create an instance of the class we want to create 
 
-            clsStaff StaffName = new clsStaff();
+            clsVendors VendorName = new clsVendors();
 
             //Test to see if it exists 
 
-            Assert.IsNotNull(StaffName);
+            Assert.IsNotNull(VendorName);
 
         }
     }
