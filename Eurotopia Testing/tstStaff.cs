@@ -1,4 +1,5 @@
 ﻿using System;
+using EurotopiaClasses;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Eurotopia_Testing

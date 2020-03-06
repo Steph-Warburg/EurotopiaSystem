@@ -10,6 +10,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EurotopiaFrontOffice", "EurotopiaFrontOffice\", "{CD8947F0-71D7-4312-AB9B-4F6582A7C403}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{72e030b9-ffa7-4948-a6ab-f1243a9f4ecd}|EurotopiaClasses.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_4132"
 		Debug.AspNetCompiler.PhysicalPath = "EurotopiaFrontOffice\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4132\"
@@ -28,7 +29,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EurotopiaFrontOffice", "Eur
 		SlnRelativePath = "EurotopiaFrontOffice\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eurotpia Testing New", "Eurotpia Testing New\Eurotpia Testing New.csproj", "{50200666-2CEE-45F8-81A6-24A442A9DFE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eurotopia Testing", "Eurotopia Testing\Eurotopia Testing.csproj", "{82D81203-79DC-49CC-9F5F-22E76ECCD42C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,10 +49,10 @@ Global
 		{CD8947F0-71D7-4312-AB9B-4F6582A7C403}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD8947F0-71D7-4312-AB9B-4F6582A7C403}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{CD8947F0-71D7-4312-AB9B-4F6582A7C403}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{50200666-2CEE-45F8-81A6-24A442A9DFE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50200666-2CEE-45F8-81A6-24A442A9DFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50200666-2CEE-45F8-81A6-24A442A9DFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{50200666-2CEE-45F8-81A6-24A442A9DFE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82D81203-79DC-49CC-9F5F-22E76ECCD42C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82D81203-79DC-49CC-9F5F-22E76ECCD42C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82D81203-79DC-49CC-9F5F-22E76ECCD42C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82D81203-79DC-49CC-9F5F-22E76ECCD42C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
