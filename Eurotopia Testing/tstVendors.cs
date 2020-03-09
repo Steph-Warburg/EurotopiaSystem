@@ -123,7 +123,92 @@ namespace Eurotopia_Testing
             Assert.AreEqual(AVendor.Country, TestData);
         }
 
+        [TestMethod]
+        public void VendorTypePropertyOK()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //create some test data to assign to the property
+            string TestData = "Food";
+            //assign the data to the property
+            AVendor.VendorType = TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(AVendor.VendorType, TestData);
+        }
+
+        [TestMethod]
+        public void SummaryPropertyOK()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //create some test data to assign to the property
+            string TestData = "A club.";
+            //assign the data to the property
+            AVendor.Summary = TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(AVendor.Summary, TestData);
+        }
+
+        /*
+         *   Find Tests
+         * 
+         * **/
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            clsVendors AVendor = new clsVendors();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //create some test data to use with the method
+            Int32 VendorNo = 1;
+            //invoke the method
+            Found = AVendor.Find(VendorNo);
+            //test to see that the result is correct
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestVendorNoFound()
+        {
+            clsVendors AVendor = new clsVendors();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data id OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 VendorNo = 21;
+            //invoke the method
+            Found = AVendor.Find(VendorNo);
+            //check the address no
+            if (AVendor.VendorNo != 21)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
 
 
+        [TestMethod]
+        public void TestDateAddedFound()
+        {
+            clsVendors AVendor = new clsVendors();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data id OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 VendorNo = 21;
+            //invoke the method
+            Found = AVendor.Find(VendorNo);
+            //check the address no
+            if (AVendor.DateAdded != Convert.ToDateTime("16/09/2015"))
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
     }
 }
