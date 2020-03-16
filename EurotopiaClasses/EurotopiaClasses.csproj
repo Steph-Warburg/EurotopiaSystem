@@ -55,11 +55,7 @@
     <Compile Include="clsStaff.cs" />
     <Compile Include="clsVendors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlDatabaseSetup.cs" />
-    <Compile Include="SqlServerUnitTest1.cs">
-      <SubType>Designer</SubType>
-    </Compile>
-    <Compile Include="txtHouseNo.cs" />
+    <Compile Include="txtVendorName.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

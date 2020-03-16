@@ -16,7 +16,7 @@ public partial class NewVendor : System.Web.UI.Page
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
         clsVendors AVendor = new clsVendors();
-        AVendor.HouseNo = txtHouseNo.Text;
+        AVendor.VendorName = txtVendorName.Text;
         Session["AVendor"] = AVendor;
         Response.Redirect("VendorViewer.aspx");
     }
