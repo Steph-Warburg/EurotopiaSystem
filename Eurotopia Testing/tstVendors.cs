@@ -67,7 +67,7 @@ namespace Eurotopia_Testing
             //create an instance of the class we want to create
             clsVendors AVendor = new clsVendors();
             //create some test data to assign to the property
-            string TestData = "21b";
+            Int32 TestData = 21;
             //assign the data to the property
             AVendor.HouseNo = TestData;
             //test to see that the two values are the same
@@ -210,5 +210,190 @@ namespace Eurotopia_Testing
             //test to see that the result is correct
             Assert.IsTrue(OK);
         }
+
+        [TestMethod]
+        public void TestHouseNoFound()
+        {
+            clsVendors AVendor = new clsVendors();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data id OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 VendorNo = 21;
+            //invoke the method
+            Found = AVendor.Find(VendorNo);
+            //check the address no
+            if (AVendor.HouseNo != 2)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestStreetFound()
+        {
+            clsVendors AVendor = new clsVendors();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data id OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 VendorNo = 21;
+            //invoke the method
+            Found = AVendor.Find(VendorNo);
+            //check the address no
+            if (AVendor.Street != "Test Street")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestCityFound()
+        {
+            clsVendors AVendor = new clsVendors();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data id OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 VendorNo = 21;
+            //invoke the method
+            Found = AVendor.Find(VendorNo);
+            //check the address no
+            if (AVendor.City != "Test City")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestPostCodeFound()
+        {
+            clsVendors AVendor = new clsVendors();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data id OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 VendorNo = 21;
+            //invoke the method
+            Found = AVendor.Find(VendorNo);
+            //check the address no
+            if (AVendor.PostCode != "LE1 7DX")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestCountryFound()
+        {
+            clsVendors AVendor = new clsVendors();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data id OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 VendorNo = 21;
+            //invoke the method
+            Found = AVendor.Find(VendorNo);
+            //check the address no
+            if (AVendor.Country != "Test Country")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestVendorNameFound()
+        {
+            clsVendors AVendor = new clsVendors();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data id OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 VendorNo = 21;
+            //invoke the method
+            Found = AVendor.Find(VendorNo);
+            //check the address no
+            if (AVendor.VendorName != "Test Name")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestVendorTypeFound()
+        {
+            clsVendors AVendor = new clsVendors();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data id OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 VendorNo = 21;
+            //invoke the method
+            Found = AVendor.Find(VendorNo);
+            //check the address no
+            if (AVendor.VendorType != "Test Type")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestSummaryFound()
+        {
+            clsVendors AVendor = new clsVendors();
+            //boolean variable to store the result of the validation
+            Boolean Found = false;
+            //boolean variable to record if data id OK
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 VendorNo = 21;
+            //invoke the method
+            Found = AVendor.Find(VendorNo);
+            //check the address no
+            if (AVendor.Summary != "Summary")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestActiveFound()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            //create some test data to use with the method
+            Int32 VendorNo = 21;
+            //invoke the method
+            Found = AVendor.Find(VendorNo);
+            //check the property
+            if (AVendor.Active != true)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
     }
 }

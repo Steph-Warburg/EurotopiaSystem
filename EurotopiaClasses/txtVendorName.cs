@@ -1,6 +1,6 @@
 ﻿namespace EurotopiaClasses
 {
-    public class txtHouseNo
+    public class txtVendorName
     {
         public static string Text { get; set; }
     }
