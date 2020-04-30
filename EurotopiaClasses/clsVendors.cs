@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary;
+using System;
 
 namespace EurotopiaClasses
 {
@@ -141,20 +142,35 @@ namespace EurotopiaClasses
 
         public bool Find(int VendorNo)
         {
-            //set the private data members to the test data value
-            mHouseNo = 2;
-            mStreet = "Test Street";
-            mCity = "Test City";
-            mPostCode = "LE1 7DX";
-            mCountry = "Test Country";
-            mVendorNo = 21;
-            mDateAdded = Convert.ToDateTime("16/9/2015");
-            mVendorName = "Test Name";
-            mVendorType = "Test Type";
-            mSummary = "Summary";
-            mActive = true;
-            //always return true
-            return true;
+            //creating an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add parameter for the Vendor No
+            DB.AddParameter("@VendorNo", VendorNo);
+            //execute stored procedure
+            DB.Execute("sproc_tblVendor_FilterByVendorNumber");
+            //if one record is found
+            if (DB.Count == 1)
+            {
+                //copy data from database to private data members
+                mHouseNo = Convert.ToInt32(DB.DataTable.Rows[0]["HouseNo"]);
+                mStreet = Convert.ToString(DB.DataTable.Rows[0]["Street"]);
+                mCity = Convert.ToString(DB.DataTable.Rows[0]["City"]);
+                mPostCode = Convert.ToString(DB.DataTable.Rows[0]["Postcode"]);
+                mCountry = Convert.ToString(DB.DataTable.Rows[0]["Country"]);
+                mVendorNo = Convert.ToInt32(DB.DataTable.Rows[0]["VendorNo"]);
+                mDateAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["DateAdded"]);
+                mVendorName = Convert.ToString(DB.DataTable.Rows[0]["VendorName"]);
+                mVendorType = Convert.ToString(DB.DataTable.Rows[0]["VendorType"]);
+                mSummary = Convert.ToString(DB.DataTable.Rows[0]["Summary"]);
+                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["OpentoBookings"]);
+                //always return true
+                return true;
+            }
+            //if no record is found
+            else
+            {
+                return false;
+            }
         }
     }
 }
