@@ -67,7 +67,7 @@ namespace Eurotopia_Testing
             //create an instance of the class we want to create
             clsVendors AVendor = new clsVendors();
             //create some test data to assign to the property
-            Int32 TestData = 21;
+            string TestData = "21";
             //assign the data to the property
             AVendor.HouseNo = TestData;
             //test to see that the two values are the same
@@ -161,7 +161,7 @@ namespace Eurotopia_Testing
             //boolean variable to store the result of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 VendorNo = 1;
+            Int32 VendorNo = 4;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //test to see that the result is correct
@@ -177,11 +177,11 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 21;
+            Int32 VendorNo = 4;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
-            if (AVendor.VendorNo != 21)
+            if (AVendor.VendorNo != 4)
             {
                 OK = false;
             }
@@ -199,11 +199,11 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 21;
+            Int32 VendorNo = 4;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
-            if (AVendor.DateAdded != Convert.ToDateTime("16/09/2015"))
+            if (AVendor.DateAdded != Convert.ToDateTime("04/12/2009"))
             {
                 OK = false;
             }
@@ -220,11 +220,11 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 21;
+            Int32 VendorNo = 4;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
-            if (AVendor.HouseNo != 2)
+            if (AVendor.HouseNo != "1     ")
             {
                 OK = false;
             }
@@ -241,11 +241,11 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 21;
+            Int32 VendorNo = 4;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
-            if (AVendor.Street != "Test Street")
+            if (AVendor.Street != "Piazza del Colosseo                               ")
             {
                 OK = false;
             }
@@ -262,11 +262,11 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 21;
+            Int32 VendorNo = 4;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
-            if (AVendor.City != "Test City")
+            if (AVendor.City != "Rome                ")
             {
                 OK = false;
             }
@@ -282,11 +282,11 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 21;
+            Int32 VendorNo = 4;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
-            if (AVendor.PostCode != "LE1 7DX")
+            if (AVendor.PostCode != "00184     ")
             {
                 OK = false;
             }
@@ -302,11 +302,11 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 21;
+            Int32 VendorNo = 4;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
-            if (AVendor.Country != "Test Country")
+            if (AVendor.Country != "Italy     ")
             {
                 OK = false;
             }
@@ -322,11 +322,11 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 21;
+            Int32 VendorNo = 4;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
-            if (AVendor.VendorName != "Test Name")
+            if (AVendor.VendorName != "Colosseum                     ")
             {
                 OK = false;
             }
@@ -342,11 +342,11 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 21;
+            Int32 VendorNo = 4;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
-            if (AVendor.VendorType != "Test Type")
+            if (AVendor.VendorType != "Historical")
             {
                 OK = false;
             }
@@ -362,11 +362,11 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 21;
+            Int32 VendorNo = 4;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
-            if (AVendor.Summary != "Summary")
+            if (AVendor.Summary != "One of the worlds wonders!                        ")
             {
                 OK = false;
             }
@@ -383,7 +383,7 @@ namespace Eurotopia_Testing
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 21;
+            Int32 VendorNo = 4;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the property

@@ -20,4 +20,31 @@ public partial class NewVendor : System.Web.UI.Page
         Session["AVendor"] = AVendor;
         Response.Redirect("VendorViewer.aspx");
     }
+
+    protected void btnFind_Click(object sender, EventArgs e)
+    {
+        //create an instance of the address class
+        clsVendors AVendor = new clsVendors();
+        //variable to store the primary key
+        Int32 VendorNo;
+        //variable to store the result of the result operation
+        Boolean Found = false;
+        //get the primary key entered by the user
+        VendorNo = Convert.ToInt32(txtVendorNo.Text);
+        //if found
+        if (Found == true)
+        {
+            txtVendorName.Text = AVendor.VendorName;
+            txtHouseNo.Text = AVendor.HouseNo;
+            txtStreet.Text = AVendor.Street;
+            txtCity.Text = AVendor.City;
+            txtCountry.Text = AVendor.Country;
+            txtPostcode.Text = AVendor.PostCode;
+            txtVendorType.Text = AVendor.VendorType;
+            txtSummary.Text = AVendor.Summary;
+            txtDateAdded.Text = AVendor.DateAdded.ToString();
+        }
+
+
+    }
 }
