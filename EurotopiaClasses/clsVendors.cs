@@ -8,7 +8,7 @@ namespace EurotopiaClasses
 
         //creating of variables
         private Int32 mVendorNo;
-        private Int32 mHouseNo;
+        private String mHouseNo;
         private String mStreet;
         private String mCity;
         private String mPostCode;
@@ -62,7 +62,7 @@ namespace EurotopiaClasses
                 mPostCode = value;
             }
         }
-        public Int32 HouseNo
+        public string HouseNo
         {
             get
             {
@@ -152,7 +152,7 @@ namespace EurotopiaClasses
             if (DB.Count == 1)
             {
                 //copy data from database to private data members
-                mHouseNo = Convert.ToInt32(DB.DataTable.Rows[0]["HouseNo"]);
+                mHouseNo = Convert.ToString(DB.DataTable.Rows[0]["HouseNo"]);
                 mStreet = Convert.ToString(DB.DataTable.Rows[0]["Street"]);
                 mCity = Convert.ToString(DB.DataTable.Rows[0]["City"]);
                 mPostCode = Convert.ToString(DB.DataTable.Rows[0]["Postcode"]);
