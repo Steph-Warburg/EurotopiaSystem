@@ -171,6 +171,89 @@ namespace EurotopiaClasses
             {
                 return false;
             }
+
+        }
+        //function for the public validation method
+        public string Valid(string houseNo, string street, string city, string postCode, string dateAdded, string vendorName, string vendorType, string summary)
+            //function accepts several parameters for validation, returns a string containing any error messages
+            //if no errors found then it returns a blank string
+        {
+            //create a string  variable to store the error
+            String Error = "";
+            //if the HouseNo is Blank
+            if(houseNo.Length == 0)
+            {
+                //record the error
+                Error = Error + "The house number may not be blank : ";
+            }
+            //if houseNo is greater than 6 characters
+            if(houseNo.Length > 6)
+            {
+                Error = Error + " The house no must be less than 6 characters : ";
+            }
+
+
+            try
+            {
+                DateTime
+                //copy the dateAdded value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(dateAdded);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the past : ";
+                }
+                //copy the dateAdded value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(dateAdded);
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the future : ";
+                }
+            }
+            catch
+            {
+                Error = Error + "The data was not a valid date : ";
+            }
+
+            //is the post code blank
+            if (postCode.Length == 0)
+            {
+                //record the error
+                Error = Error + "The post code may not be blank : ";
+            }
+            //if the post code is too long
+            if (postCode.Length > 9)
+            {
+                //record the error
+                Error = Error + "The post code must be less than 9 characters : ";
+            }
+            //is the street blank
+            if (street.Length == 0)
+            {
+                //record the error
+                Error = Error + "The street may not be blank : ";
+            }
+            //if the street is too long
+            if (street.Length > 50)
+            {
+                //record the error
+                Error = Error + "The street must be less than 50 characters : ";
+            }
+            //is the town blank
+            if (city.Length == 0)
+            {
+                //record the error
+                Error = Error + "The town may not be blank : ";
+            }
+            //if the town is too long
+            if (city.Length > 50)
+            {
+                //record the error
+                Error = Error + "The town must be less than 50 characters : ";
+            }
+            //return any error messages
+            return Error;
         }
     }
 }
