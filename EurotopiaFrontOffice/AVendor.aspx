@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="NewVendor.aspx.cs" Inherits="NewVendor" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AVendor.aspx.cs" Inherits="NewVendor" %>
 
 <!DOCTYPE html>
 
@@ -56,6 +56,9 @@
             <br />
             <br />
             <asp:CheckBox ID="lblOpenToBookings" runat="server" Text="Open to bookings"/>
+            <br />
+            <br />
+            <asp:Label ID="lblError" runat="server" Text="Error"></asp:Label>
             <br />
             <br />
             <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" />

@@ -7,6 +7,562 @@ namespace Eurotopia_Testing
     [TestClass]
     public class tstVendors
     {
+
+        //good test data
+        string VendorName = "Test Vendor";
+        string HouseNo = "12b";
+        string Street = "some street";
+        string City = "Leicester";
+        string Country = "UK";
+        string PostCode = "LE1 1AS";
+        string DateAdded = DateTime.Now.Date.ToString();
+        string VendorType = "Food";
+        string Summary = " Ice cream parlour";
+
+        [TestMethod]
+        public void ValidMethodOk()
+        {
+            //create instance of the new class
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error messages
+            String Error = "";
+            //invoke the method
+            Error = AVendor.Valid( HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        //Tests for HouseNo
+
+        [TestMethod]
+        public void HouseNoMinLessOne()
+        {
+            clsVendors AVendor = new clsVendors();
+            String Error = "";
+            string HouseNo = "";
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        public void HouseNoMin()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string HouseNo = "a"; //this should be ok
+                                  //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HouseNoMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string HouseNo = "aa"; //this should be ok
+                                   //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HouseNoMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string HouseNo = "aaaaa"; //this should be ok
+                                      //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void HouseNoMax()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string HouseNo = "aaaaaa"; //this should be ok
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HouseNoMid()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string HouseNo = "aaa"; //this should be ok
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HouseNoMaxPlusOne()
+        {
+            clsVendors AVendor = new clsVendors();
+            String Error = "";
+            string HouseNo = "aaaaaaa";
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void HouseNoExtremeMax()
+        {
+            clsVendors AVendor = new clsVendors();
+            String Error = "";
+            //create test data to pass to the method
+            string HouseNo = "";
+            HouseNo = HouseNo.PadRight(500, 'a');
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        //Tests for DateAdded
+
+        [TestMethod]
+        public void DateAddedExtremeMin()
+        {
+            clsVendors AVendor = new clsVendors();
+            String Error = "";
+            //create variable to store the test date
+            DateTime TestDate;
+            //set TestDate to todays date
+            TestDate = DateTime.Now.Date;
+            //change date to 100 years ago
+            TestDate = TestDate.AddYears(-100);
+            //convert to string
+            string DateAdded = TestDate.ToString();
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Assert.AreNotEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void DateAddedMinLessOne()
+        {
+            clsVendors AVendor = new clsVendors();
+            String Error = "";
+            //create variable to store the test date
+            DateTime TestDate;
+            //set TestDate to todays date
+            TestDate = DateTime.Now.Date;
+            //change date to yesterday
+            TestDate = TestDate.AddDays(-1);
+            //convert to string
+            string DateAdded = TestDate.ToString();
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Assert.AreNotEqual(Error, "");
+
+        }
+        [TestMethod]
+        public void DateAddedMin()
+        {
+            clsVendors AVendor = new clsVendors();
+            String Error = "";
+            //create variable to store the test date
+            DateTime TestDate;
+            //set TestDate to todays date
+            TestDate = DateTime.Now.Date;
+            //convert to string
+            string DateAdded = TestDate.ToString();
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void DateAddedMinPlusOne()
+        {
+            clsVendors AVendor = new clsVendors();
+            String Error = "";
+            //create variable to store the test date
+            DateTime TestDate;
+            //set TestDate to todays date
+            TestDate = DateTime.Now.Date;
+            //change date to tomorrow
+            TestDate = TestDate.AddDays(1);
+            //convert to string
+            string DateAdded = TestDate.ToString();
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void DateAddedExtremeMax()
+        {
+            clsVendors AVendor = new clsVendors();
+            String Error = "";
+            //create variable to store the test date
+            DateTime TestDate;
+            //set TestDate to todays date
+            TestDate = DateTime.Now.Date;
+            //change date to 100 years in the future
+            TestDate = TestDate.AddYears(100);
+            //convert to string
+            string DateAdded = TestDate.ToString();
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void DateAddedInvalidData()
+        {
+            clsVendors AVendor = new clsVendors();
+            String Error = "";
+            //set DateAdded to a non data value
+            string DateAdded = "this is not a date!";
+            //invoke method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        //Tests for PostCode
+
+        [TestMethod]
+        public void PostCodeMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should fail
+            string PostCode = "";
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PostCodeMin()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string PostCode = "a";
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PostCodeMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string PostCode = "aa";
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PostCodeMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string PostCode = "aaaaaaaa";
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PostCodeMax()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string PostCode = "aaaaaaaaa";
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PostCodeMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should fail
+            string PostCode = "aaaaaaaaaa";
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PostCodeMid()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string PostCode = "aaaa";
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        //Tests for Street
+        [TestMethod]
+        public void StreetMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should fail
+            string Street = "";
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StreetMin()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string Street = "a";
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StreetMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string Street = "aa";
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StreetMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string Street = "";
+            Street = Street.PadRight(49, 'a');
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StreetMax()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string Street = "";
+            Street = Street.PadRight(50, 'a');
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StreetMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should fail
+            string Street = "";
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StreetMid()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string Street = "";
+            Street = Street.PadRight(25, 'a');
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+        //Tests for City
+        [TestMethod]
+        public void CityMinLessOne()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should fail
+            string City = "";
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CityMin()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string Town = "a";
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CityMinPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string City = "aa";
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        public void CityMaxLessOne()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string City = "";
+            City = City.PadRight(49, 'a');
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CityMax()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string City = "";
+            City = City.PadRight(50, 'a');
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CityMaxPlusOne()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this shold fail
+            string City = "";
+            City = City.PadRight(51, 'a');
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        public void CityMid()
+        {
+            //create an instance of the class we want to create
+            clsVendors AVendor = new clsVendors();
+            //string variable to store any error message
+            String Error = "";
+            //this should pass
+            string City = "";
+            City = City.PadRight(25, 'a');
+            //invoke the method
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            //test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
         [TestMethod]
         public void InstanceOK()
         {
