@@ -55,7 +55,7 @@
             <br />
             <br />
             <br />
-            <asp:CheckBox ID="lblOpenToBookings" runat="server" Text="Open to bookings"/>
+            <asp:CheckBox ID="chkOpenToBookings" runat="server" Text="Open to bookings"/>
             <br />
             <br />
             <asp:Label ID="lblError" runat="server" Text="Error"></asp:Label>
