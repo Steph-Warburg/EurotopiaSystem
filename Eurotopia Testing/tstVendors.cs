@@ -19,6 +19,10 @@ namespace Eurotopia_Testing
         string VendorType = "Food";
         string Summary = " Ice cream parlour";
 
+        /*
+         * *   Validation Tests
+         * *
+         * * **/
         [TestMethod]
         public void ValidMethodOk()
         {
@@ -27,12 +31,12 @@ namespace Eurotopia_Testing
             //string variable to store any error messages
             String Error = "";
             //invoke the method
-            Error = AVendor.Valid( HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid( HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
 
-        //Tests for HouseNo
+        
 
         [TestMethod]
         public void HouseNoMinLessOne()
@@ -40,7 +44,7 @@ namespace Eurotopia_Testing
             clsVendors AVendor = new clsVendors();
             String Error = "";
             string HouseNo = "";
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -54,7 +58,7 @@ namespace Eurotopia_Testing
             //create some test data to pass to the method
             string HouseNo = "a"; //this should be ok
                                   //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -69,7 +73,7 @@ namespace Eurotopia_Testing
             //create some test data to pass to the method
             string HouseNo = "aa"; //this should be ok
                                    //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -84,7 +88,7 @@ namespace Eurotopia_Testing
             //create some test data to pass to the method
             string HouseNo = "aaaaa"; //this should be ok
                                       //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -98,7 +102,7 @@ namespace Eurotopia_Testing
             //create some test data to pass to the method
             string HouseNo = "aaaaaa"; //this should be ok
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -113,7 +117,7 @@ namespace Eurotopia_Testing
             //create some test data to pass to the method
             string HouseNo = "aaa"; //this should be ok
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -124,7 +128,7 @@ namespace Eurotopia_Testing
             clsVendors AVendor = new clsVendors();
             String Error = "";
             string HouseNo = "aaaaaaa";
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -137,7 +141,7 @@ namespace Eurotopia_Testing
             //create test data to pass to the method
             string HouseNo = "";
             HouseNo = HouseNo.PadRight(500, 'a');
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -157,7 +161,7 @@ namespace Eurotopia_Testing
             TestDate = TestDate.AddYears(-100);
             //convert to string
             string DateAdded = TestDate.ToString();
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -174,7 +178,7 @@ namespace Eurotopia_Testing
             TestDate = TestDate.AddDays(-1);
             //convert to string
             string DateAdded = TestDate.ToString();
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             Assert.AreNotEqual(Error, "");
 
         }
@@ -189,7 +193,7 @@ namespace Eurotopia_Testing
             TestDate = DateTime.Now.Date;
             //convert to string
             string DateAdded = TestDate.ToString();
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             Assert.AreEqual(Error, "");
         }
         [TestMethod]
@@ -205,7 +209,7 @@ namespace Eurotopia_Testing
             TestDate = TestDate.AddDays(1);
             //convert to string
             string DateAdded = TestDate.ToString();
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
@@ -221,7 +225,7 @@ namespace Eurotopia_Testing
             TestDate = TestDate.AddYears(100);
             //convert to string
             string DateAdded = TestDate.ToString();
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
@@ -232,7 +236,7 @@ namespace Eurotopia_Testing
             //set DateAdded to a non data value
             string DateAdded = "this is not a date!";
             //invoke method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -249,7 +253,7 @@ namespace Eurotopia_Testing
             //this should fail
             string PostCode = "";
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -264,7 +268,7 @@ namespace Eurotopia_Testing
             //this should pass
             string PostCode = "a";
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -279,7 +283,7 @@ namespace Eurotopia_Testing
             //this should pass
             string PostCode = "aa";
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -294,7 +298,7 @@ namespace Eurotopia_Testing
             //this should pass
             string PostCode = "aaaaaaaa";
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -309,7 +313,7 @@ namespace Eurotopia_Testing
             //this should pass
             string PostCode = "aaaaaaaaa";
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -324,7 +328,7 @@ namespace Eurotopia_Testing
             //this should fail
             string PostCode = "aaaaaaaaaa";
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -339,7 +343,7 @@ namespace Eurotopia_Testing
             //this should pass
             string PostCode = "aaaa";
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -354,7 +358,7 @@ namespace Eurotopia_Testing
             //this should fail
             string Street = "";
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -369,7 +373,7 @@ namespace Eurotopia_Testing
             //this should pass
             string Street = "a";
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -384,7 +388,7 @@ namespace Eurotopia_Testing
             //this should pass
             string Street = "aa";
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -400,7 +404,7 @@ namespace Eurotopia_Testing
             string Street = "";
             Street = Street.PadRight(49, 'a');
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -416,7 +420,7 @@ namespace Eurotopia_Testing
             string Street = "";
             Street = Street.PadRight(50, 'a');
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -431,7 +435,7 @@ namespace Eurotopia_Testing
             //this should fail
             string Street = "";
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -447,7 +451,7 @@ namespace Eurotopia_Testing
             string Street = "";
             Street = Street.PadRight(25, 'a');
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -462,7 +466,7 @@ namespace Eurotopia_Testing
             //this should fail
             string City = "";
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -477,7 +481,7 @@ namespace Eurotopia_Testing
             //this should pass
             string Town = "a";
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -492,7 +496,7 @@ namespace Eurotopia_Testing
             //this should pass
             string City = "aa";
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -509,7 +513,7 @@ namespace Eurotopia_Testing
             string City = "";
             City = City.PadRight(49, 'a');
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -525,7 +529,7 @@ namespace Eurotopia_Testing
             string City = "";
             City = City.PadRight(50, 'a');
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -541,7 +545,7 @@ namespace Eurotopia_Testing
             string City = "";
             City = City.PadRight(51, 'a');
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -558,11 +562,15 @@ namespace Eurotopia_Testing
             string City = "";
             City = City.PadRight(25, 'a');
             //invoke the method
-            Error = AVendor.Valid(HouseNo, Street, City, PostCode, DateAdded, VendorName, VendorType, Summary);
+            Error = AVendor.Valid(HouseNo, Street, City, PostCode, Country, DateAdded, VendorName, VendorType, Summary);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
 
+        /*
+         *   Tests
+         *   * 
+         *   * **/
         [TestMethod]
         public void InstanceOK()
         {
@@ -581,8 +589,8 @@ namespace Eurotopia_Testing
         {
             clsVendors AVendor = new clsVendors();
             Boolean TestData = true;
-            AVendor.Active = TestData;
-            Assert.AreEqual(AVendor.Active, TestData);
+            AVendor.OpenToBookings = TestData;
+            Assert.AreEqual(AVendor.OpenToBookings, TestData);
         }
 
         [TestMethod]
@@ -717,7 +725,7 @@ namespace Eurotopia_Testing
             //boolean variable to store the result of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 VendorNo = 4;
+            Int32 VendorNo = 32;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //test to see that the result is correct
@@ -733,11 +741,11 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 4;
+            Int32 VendorNo = 32;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
-            if (AVendor.VendorNo != 4)
+            if (AVendor.VendorNo != 32)
             {
                 OK = false;
             }
@@ -755,7 +763,7 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 4;
+            Int32 VendorNo = 32;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
@@ -776,7 +784,7 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 4;
+            Int32 VendorNo = 32;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
@@ -797,7 +805,7 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 4;
+            Int32 VendorNo = 32;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
@@ -818,7 +826,7 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 4;
+            Int32 VendorNo = 32;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
@@ -838,7 +846,7 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 4;
+            Int32 VendorNo = 32;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
@@ -856,15 +864,15 @@ namespace Eurotopia_Testing
             //boolean variable to store the result of the validation
             Boolean Found = false;
             //boolean variable to record if data id OK
-            Boolean OK = true;
+            Boolean OK = false;
             //create some test data to use with the method
-            Int32 VendorNo = 4;
+            Int32 VendorNo = 32;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
-            if (AVendor.Country != "Italy     ")
+            if (AVendor.Country.Contains("Italy"))
             {
-                OK = false;
+                OK = true;
             }
             //test to see that the result is correct
             Assert.IsTrue(OK);
@@ -876,15 +884,15 @@ namespace Eurotopia_Testing
             //boolean variable to store the result of the validation
             Boolean Found = false;
             //boolean variable to record if data id OK
-            Boolean OK = true;
+            Boolean OK = false;
             //create some test data to use with the method
-            Int32 VendorNo = 4;
+            Int32 VendorNo = 32;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
-            if (AVendor.VendorName != "Colosseum                     ")
+            if (AVendor.VendorName.Contains("Colosseum"))
             {
-                OK = false;
+                OK = true;
             }
             //test to see that the result is correct
             Assert.IsTrue(OK);
@@ -898,7 +906,7 @@ namespace Eurotopia_Testing
             //boolean variable to record if data id OK
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 4;
+            Int32 VendorNo = 32;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
@@ -916,15 +924,15 @@ namespace Eurotopia_Testing
             //boolean variable to store the result of the validation
             Boolean Found = false;
             //boolean variable to record if data id OK
-            Boolean OK = true;
+            Boolean OK = false;
             //create some test data to use with the method
-            Int32 VendorNo = 4;
+            Int32 VendorNo = 32;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the address no
-            if (AVendor.Summary != "One of the worlds wonders!                        ")
+            if (AVendor.Summary.Contains("One of the worlds wonders!"))
             {
-                OK = false;
+                OK = true;
             }
             //test to see that the result is correct
             Assert.IsTrue(OK);
@@ -939,11 +947,11 @@ namespace Eurotopia_Testing
             //boolean variable to record if data is OK (assume it is)
             Boolean OK = true;
             //create some test data to use with the method
-            Int32 VendorNo = 4;
+            Int32 VendorNo = 32;
             //invoke the method
             Found = AVendor.Find(VendorNo);
             //check the property
-            if (AVendor.Active != true)
+            if (AVendor.OpenToBookings != true)
             {
                 OK = false;
             }

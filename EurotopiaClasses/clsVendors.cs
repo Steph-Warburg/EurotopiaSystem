@@ -16,17 +16,17 @@ namespace EurotopiaClasses
         private String mVendorName;
         private String mVendorType;
         private String mSummary;
-        private bool mActive;
+        private bool mOpenToBookings;
 
-        public bool Active
+        public bool OpenToBookings
         {
             get
             {
-                return mActive;
+                return mOpenToBookings;
             }
             set
             {
-                mActive = value;
+                mOpenToBookings = value;
             }
         }
         private DateTime mDateAdded;
@@ -162,7 +162,7 @@ namespace EurotopiaClasses
                 mVendorName = Convert.ToString(DB.DataTable.Rows[0]["VendorName"]);
                 mVendorType = Convert.ToString(DB.DataTable.Rows[0]["VendorType"]);
                 mSummary = Convert.ToString(DB.DataTable.Rows[0]["Summary"]);
-                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["OpentoBookings"]);
+                mOpenToBookings = Convert.ToBoolean(DB.DataTable.Rows[0]["OpentoBookings"]);
                 //always return true
                 return true;
             }
@@ -174,7 +174,7 @@ namespace EurotopiaClasses
 
         }
         //function for the public validation method
-        public string Valid(string houseNo, string street, string city, string postCode, string dateAdded, string vendorName, string vendorType, string summary)
+        public string Valid(string houseNo, string street, string city, string postCode, string country, string dateAdded, string vendorName, string vendorType, string summary)
             //function accepts several parameters for validation, returns a string containing any error messages
             //if no errors found then it returns a blank string
         {

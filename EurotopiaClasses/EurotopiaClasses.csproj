@@ -53,6 +53,7 @@
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsStaff.cs" />
+    <Compile Include="clsVendorCollection.cs" />
     <Compile Include="clsVendors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="txtVendorName.cs" />
