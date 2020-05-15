@@ -189,7 +189,7 @@ namespace Eurotopia_Testing {
         {
             clsVendorCollection AllVendors = new clsVendorCollection();
             clsVendorCollection FilteredVendors = new clsVendorCollection();
-            FilteredVendors.ReportByCountry(" ");
+            FilteredVendors.ReportByCountry("");
             Assert.AreEqual(AllVendors.Count, FilteredVendors.Count);
         }
         [TestMethod]
