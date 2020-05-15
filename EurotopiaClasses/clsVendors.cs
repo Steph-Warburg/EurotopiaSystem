@@ -180,11 +180,12 @@ namespace EurotopiaClasses
         {
             //create a string  variable to store the error
             String Error = "";
+            DateTime DateTemp;
             //if the HouseNo is Blank
             if(houseNo.Length == 0)
             {
                 //record the error
-                Error = Error + "The house number may not be blank : ";
+                Error = Error + "The house number cannot be blank : ";
             }
             //if houseNo is greater than 6 characters
             if(houseNo.Length > 6)
@@ -195,7 +196,7 @@ namespace EurotopiaClasses
 
             try
             {
-                DateTime
+                
                 //copy the dateAdded value to the DateTemp variable
                 DateTemp = Convert.ToDateTime(dateAdded);
                 if (DateTemp < DateTime.Now.Date)
@@ -220,7 +221,7 @@ namespace EurotopiaClasses
             if (postCode.Length == 0)
             {
                 //record the error
-                Error = Error + "The post code may not be blank : ";
+                Error = Error + "The post code cannot be blank : ";
             }
             //if the post code is too long
             if (postCode.Length > 9)
@@ -232,7 +233,7 @@ namespace EurotopiaClasses
             if (street.Length == 0)
             {
                 //record the error
-                Error = Error + "The street may not be blank : ";
+                Error = Error + "The street cannot be blank : ";
             }
             //if the street is too long
             if (street.Length > 50)
@@ -244,7 +245,7 @@ namespace EurotopiaClasses
             if (city.Length == 0)
             {
                 //record the error
-                Error = Error + "The town may not be blank : ";
+                Error = Error + "The town cannot be blank : ";
             }
             //if the town is too long
             if (city.Length > 50)
@@ -252,6 +253,56 @@ namespace EurotopiaClasses
                 //record the error
                 Error = Error + "The town must be less than 50 characters : ";
             }
+            
+            //if blank
+            if (vendorName.Length == 0)
+            {
+                //record the error
+                Error = Error + "The vendor name cannot be blank : ";
+            }
+            //if too long
+            if (vendorName.Length > 30)
+            {
+                //record the error
+                Error = Error + "The vendor name must be less than 30 characters : ";
+            }
+            //if blank
+            if (vendorType.Length == 0)
+            {
+                //record the error
+                Error = Error + "The vendor name cannot be blank : ";
+            }
+            //if too long
+            if (vendorType.Length > 10)
+            {
+                //record the error
+                Error = Error + "The vendor name must be less than 10 characters : ";
+            }
+            //if blank
+            if (summary.Length == 0)
+            {
+                //record the error
+                Error = Error + "The vendor name cannot be blank : ";
+            }
+            //if too long
+            if (summary.Length > 50)
+            {
+                //record the error
+                Error = Error + "The vendor name must be less than 30 characters : ";
+            }
+            //if blank
+            if (country.Length == 0)
+            {
+                //record the error
+                Error = Error + "The vendor name cannot be blank : ";
+            }
+            //if too long
+            if (country.Length > 10)
+            {
+                //record the error
+                Error = Error + "The vendor name must be less than 10 characters : ";
+            }
+
             //return any error messages
             return Error;
         }
