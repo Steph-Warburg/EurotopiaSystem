@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1169
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EurotopiaBackOffice", "..\EurotopiaBackOffice\EurotopiaBackOffice.csproj", "{F3AE76EE-9DE5-43D9-8CCD-D94FBDF30ADF}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EurotopiaFrontOffice", "EurotopiaFrontOffice\", "{3B1F0C4E-6B28-454E-89F7-FFD10CFD0960}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51169"
+		Debug.AspNetCompiler.PhysicalPath = "EurotopiaFrontOffice\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51169\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51169"
+		Release.AspNetCompiler.PhysicalPath = "EurotopiaFrontOffice\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51169\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51169"
+		SlnRelativePath = "EurotopiaFrontOffice\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EurotopiaClasses", "EurotopiaClasses\EurotopiaClasses.csproj", "{FA01147C-CC35-4198-AAC7-B416D4F75455}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eurotopia Testing", "Eurotopia Testing\Eurotopia Testing.csproj", "{B5D125C6-268A-4E48-BC7D-53797FFC670F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3AE76EE-9DE5-43D9-8CCD-D94FBDF30ADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3AE76EE-9DE5-43D9-8CCD-D94FBDF30ADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3AE76EE-9DE5-43D9-8CCD-D94FBDF30ADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3AE76EE-9DE5-43D9-8CCD-D94FBDF30ADF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B1F0C4E-6B28-454E-89F7-FFD10CFD0960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B1F0C4E-6B28-454E-89F7-FFD10CFD0960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B1F0C4E-6B28-454E-89F7-FFD10CFD0960}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B1F0C4E-6B28-454E-89F7-FFD10CFD0960}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{FA01147C-CC35-4198-AAC7-B416D4F75455}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA01147C-CC35-4198-AAC7-B416D4F75455}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA01147C-CC35-4198-AAC7-B416D4F75455}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA01147C-CC35-4198-AAC7-B416D4F75455}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5D125C6-268A-4E48-BC7D-53797FFC670F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5D125C6-268A-4E48-BC7D-53797FFC670F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5D125C6-268A-4E48-BC7D-53797FFC670F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5D125C6-268A-4E48-BC7D-53797FFC670F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {542E16CE-5DD7-4A26-93B7-95CC3639A4AC}
+	EndGlobalSection
+EndGlobal
